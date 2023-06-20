@@ -630,3 +630,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   -webkit-mask: url("./assets/img/github.svg") no-repeat center;
   mask: url("./assets/img/github.svg") no-repeat center;
 }
+
+.secondConnect {
+  text-decoration: none;
+  color: #fff !important;
+
+}
+
+.secondConnect:hover {
+  color: #c5c4c4 !important;
+
+}
