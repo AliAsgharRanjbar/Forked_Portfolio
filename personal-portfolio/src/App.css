@@ -114,7 +114,7 @@ span.navbar-text {
     align-items: center;
 }
 .social-icon {
-    display: inline-block;
+    display: block;
     margin-left: 14px;
 }
 .social-icon a {
@@ -240,7 +240,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-repeat: no-repeat;
 }
 .banner .tagline {
-  font-weight: 700;
+  font-weight: 100;
   letter-spacing: 0.8px;
   padding: 8px 10px;
   background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
@@ -250,7 +250,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   display: inline-block;
 }
 .banner h1 {
-  font-size: 65px;
+  font-size: 30px;
   font-weight: 700;
   letter-spacing: 0.8px;
   line-height: 1;
@@ -259,7 +259,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .banner p {
   color: #B8B8B8;
-  font-size: 18px;
+  font-size: 15px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
   width: 96%;
@@ -302,8 +302,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Skills Css ************/
 .skill {
-  padding: 0 0 50px 0;
+  padding: 80px 0 50px 0;
   position: relative;
+  /* padding-top: 80px ; */
 }
 .skill-bx {
   background: #151515;
@@ -469,7 +470,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /************ Projects Css ************/
 .contact {
   background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
-  padding: 60px 0 200px 0;
+  padding: 60px 0 40px 0;
 }
 .contact img {
   width: 92%;
@@ -615,4 +616,17 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: #B8B8B8;
   letter-spacing: 0.5px;
   margin-top: 20px;
+}
+
+.social-icon a {
+  margin-top: 20px;
+  padding: 0;
+  line-height: normal;
+  text-decoration: none;
+}
+
+.gitLogo {
+  background-color: whitesmoke;
+  -webkit-mask: url("./assets/img/github.svg") no-repeat center;
+  mask: url("./assets/img/github.svg") no-repeat center;
 }

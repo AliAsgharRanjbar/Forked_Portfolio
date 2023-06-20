@@ -4,6 +4,10 @@ import logo from '../assets/img/logo.svg';
 import navIcon1 from '../assets/img/nav-icon1.svg';
 import navIcon2 from '../assets/img/nav-icon2.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';
+import github from "../assets/img/github.svg";
+import telegram from "../assets/img/telegram.svg";
+import email from "../assets/img/email.svg";
+import phone from "../assets/img/phone.svg";
 import { HashLink } from 'react-router-hash-link';
 import {
   BrowserRouter as Router
@@ -50,9 +54,11 @@ export const NavBar = () => {
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
-                <a href="#"><img src={navIcon1} alt="" /></a>
-                <a href="#"><img src={navIcon2} alt="" /></a>
-                <a href="#"><img src={navIcon3} alt="" /></a>
+              <a href="https://www.linkedin.com/in/aliasgharranjbar/"><img src={navIcon1} alt="Icon" /></a>
+              <a href="https://t.me/RanjbarAliAsghar"><img src={telegram} alt="Icon" /></a>
+              <a href="https://github.com/AliAsgharRanjbar"><img src={github} alt="Icon" /></a>
+              <a href="mailto:me@alibot.ir"><img src={email} alt="Icon" title="email" /></a>
+              <a href="tel:+989162603646"><img src={phone} alt="Icon" title="phone" /></a>
               </div>
               <HashLink to='#connect'>
                 <button className="vvd"><span>Let’s Connect</span></button>
