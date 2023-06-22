@@ -30,7 +30,7 @@ export const Footer = () => {
 
 
             </div>
-            <p>Copyleft 2023. All Rights Reserved</p>
+            <p>Copyleft <span class="copy-left"> ©</span> 2023. All Rights Ignored.</p>
             <span className="gitLogo"><a href="https://github.com/judygab/web-dev-projects/tree/main/personal-portfolio"><img src={github} alt="Icon" style={{ width: "50px"}} title="This portfolio is not mine *-*  I forked it."/></a></span>
             {/* <FontAwesomeIcon icon="fa-brands fa-github" spin size="2xs" /> */}
 

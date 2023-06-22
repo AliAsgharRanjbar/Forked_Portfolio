@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+::-moz-selection:not(img) { /* Code for Firefox */
+
+  background: indigo;
+}
+
+::selection:not(img) {
+
+  background: indigo;
+}
+
+::-moz-selection:not(code) { /* Code for Firefox */
+  color: white;
+
+}
+
+::selection:not(code) {
+  color: white;
+}
+
+

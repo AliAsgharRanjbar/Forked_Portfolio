@@ -55,9 +55,16 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <span className="tagline">Welcome to my Portfolio &#40;	not a complete one ;&#41; &#41;	</span>
-                <h1>{`Hi! I'm AliAsghar Ranjbar`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Gamer", "Tech lover" ]'><span className="wrap">{text}</span></span></h1>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <span className="tagline">Welcome, Happy to see you here :&#41; </span>
+                <h1>Hi! <br/> I'm AliAsghar Ranjbar <br/> <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Gamer", "Tech lover" ]'><span className="wrap">{text}</span></span></h1>
+                  <p>as you can see above, my name is AliAsghar Ranjbar,
+                     I live in Yazd, <b><i>Iran</i></b> ❤️.
+                     I'm a Computer Engineering Student at
+                      <a href="https://yazd.ac.ir/" className="uni-link"> Yazd university</a>, 
+                      with a focus on software engineering.
+                       I always try to be a good listener and learn from everthing.
+                       I'm currently working on developing my programming skills.
+                       </p>
                   
                   <button  onClick={() => console.log("connect")}><a href="#connect" className="secondConnect">Let’s Connect</a><a href="#connect" className="secondConnect"><ArrowRightCircle size={25} /></a></button>
               </div>}

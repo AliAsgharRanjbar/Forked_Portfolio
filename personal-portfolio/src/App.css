@@ -250,7 +250,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   display: inline-block;
 }
 .banner h1 {
-  font-size: 30px;
+  font-size: 65px;
   font-weight: 700;
   letter-spacing: 0.8px;
   line-height: 1;
@@ -625,11 +625,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   text-decoration: none;
 }
 
-.gitLogo {
+/* .gitLogo {
   background-color: whitesmoke;
   -webkit-mask: url("./assets/img/github.svg") no-repeat center;
   mask: url("./assets/img/github.svg") no-repeat center;
-}
+} */
 
 .secondConnect {
   text-decoration: none;
@@ -640,4 +640,23 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .secondConnect:hover {
   color: #c5c4c4 !important;
 
+}
+
+.uni-link {
+  text-decoration: none;
+  color: #B8B8B8 !important;
+
+}
+
+.copy-left { 
+  display: inline-block;
+  text-align: right;
+  margin: 0px;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH"; 
+  font-size: larger;
 }
