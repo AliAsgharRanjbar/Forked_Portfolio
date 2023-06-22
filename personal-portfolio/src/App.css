@@ -149,19 +149,7 @@ input:focus, textarea:focus, select:focus {
 	}
 }
 
-p.success {
-	color: green;
-  display: block;
-}
 
-p.danger {
-	color: red;
-  display: block;
-}
-
-p.hide {
-  display: none;
-}
 /************ Navbar Css ************/
 nav.navbar {
   padding: 18px 0;
