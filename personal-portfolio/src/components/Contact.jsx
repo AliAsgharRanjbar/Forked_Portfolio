@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import Swal from 'sweetalert2';
+import { Loader, Center } from '@mantine/core';
 
 export const Contact = () => {
   const formInitialDetails = {
@@ -14,7 +16,7 @@ export const Contact = () => {
   }
   const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState('Send');
-  const [status, setStatus] = useState({});
+  const [status, setStatus] = useState();
 
   const onFormUpdate = (category, value) => {
       setFormDetails({
@@ -22,11 +24,10 @@ export const Contact = () => {
         [category]: value
       })
   }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("Sending...");
-    let response = await fetch("http://localhost:5000/contact", {
+    const response = await fetch("https://reqres.in/api/user/2", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
@@ -34,13 +35,42 @@ export const Contact = () => {
       body: JSON.stringify(formDetails),
     });
     setButtonText("Send");
-    let result = await response.json();
+    // const result = await response.json();
     setFormDetails(formInitialDetails);
-    if (result.code == 200) {
-      setStatus({ success: true, message: 'Message sent successfully'});
-    } else {
-      setStatus({ success: false, message: 'Something went wrong, please try again later.'});
+
+    setStatus(response.ok)
+    if (response.ok) {
+      const data = await response.json()
+      console.log("Data: ", data)
     }
+    if (status === undefined) {
+      Swal.fire(
+        'Try again',
+        "Sorry, couldn't proceed your request.",
+        'error'
+        )
+    }
+    if (status) {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'bottom-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+
+      Toast.fire({
+        icon: 'success',
+        title: 'Message sent successfully!',
+      })
+
+
+  }
+
   };
 
   return (
@@ -62,26 +92,55 @@ export const Contact = () => {
                 <form onSubmit={handleSubmit}>
                   <Row>
                     <Col size={12} sm={6} className="px-1">
-                      <input type="text" value={formDetails.firstName} placeholder="First Name" onChange={(e) => onFormUpdate('firstName', e.target.value)} />
+                      <input id="fname" dir="auto" type="text" value={formDetails.firstName} placeholder="First Name" onChange={(e) => {onFormUpdate('firstName', e.target.value)}}
+                       onBlur={(e) => {
+                        const thiso = document.getElementById("fname")
+                        thiso.className = ""
+                      }} required onInvalid={(e) => {
+                        const thiso = document.getElementById("fname")
+                        thiso.className = "animate__animated animate__headShake"
+                        }} />
                     </Col>
                     <Col size={12} sm={6} className="px-1">
-                      <input type="text" value={formDetails.lasttName} placeholder="Last Name" onChange={(e) => onFormUpdate('lastName', e.target.value)}/>
+                      <input id="lname" dir="auto" type="text" value={formDetails.lastName} placeholder="Last Name" onChange={(e) => onFormUpdate('lastName', e.target.value)}                       onBlur={(e) => {
+                        const thiso = document.getElementById("lname")
+                        thiso.className = ""
+                      }} required onInvalid={(e) => {
+                        const thiso = document.getElementById("lname")
+                        thiso.className = "animate__animated animate__headShake"
+                        }} />
                     </Col>
                     <Col size={12} sm={6} className="px-1">
-                      <input type="email" value={formDetails.email} placeholder="Email Address" onChange={(e) => onFormUpdate('email', e.target.value)} />
+                      <input id="email" dir="auto" type="email" value={formDetails.email} placeholder="Email Address" onChange={(e) => onFormUpdate('email', e.target.value)}                        onBlur={(e) => {
+                        const thiso = document.getElementById("email")
+                        thiso.className = ""
+                      }} required onInvalid={(e) => {
+                        const thiso = document.getElementById("email")
+                        thiso.className = "animate__animated animate__headShake"
+                        }} />
                     </Col>
                     <Col size={12} sm={6} className="px-1">
-                      <input type="tel" value={formDetails.phone} placeholder="Phone No." onChange={(e) => onFormUpdate('phone', e.target.value)}/>
+                      <input id="tel" dir="auto" type="tel" value={formDetails.phone} placeholder="Phone No." onChange={(e) => onFormUpdate('phone', e.target.value)} 
+                        onBlur={(e) => {
+                        const thiso = document.getElementById("tel")
+                        thiso.className = ""
+                      }} required onInvalid={(e) => {
+                        const thiso = document.getElementById("tel")
+                        thiso.className = "animate__animated animate__headShake"
+                        }} />
                     </Col>
                     <Col size={12} className="px-1">
-                      <textarea rows="6" value={formDetails.message} placeholder="Message" onChange={(e) => onFormUpdate('message', e.target.value)}></textarea>
+                      <textarea id="message" dir="auto" rows="6" value={formDetails.message} placeholder="Message" onChange={(e) => onFormUpdate('message', e.target.value)} 
+                        onBlur={(e) => {
+                        const thiso = document.getElementById("message")
+                        thiso.className = ""
+                      }} required onInvalid={(e) => {
+                        const thiso = document.getElementById("message")
+                        thiso.className = "animate__animated animate__headShake"
+                        }} ></textarea>
                       <button type="submit"><span>{buttonText}</span></button>
                     </Col>
                     {
-                      status.message &&
-                      <Col>
-                        <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
-                      </Col>
                     }
                   </Row>
                 </form>

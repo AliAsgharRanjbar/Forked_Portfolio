@@ -58,7 +58,7 @@ export const Banner = () => {
                 <span className="tagline">Welcome, Happy to see you here :&#41; </span>
                 <h1>Hi! <br/> I'm AliAsghar Ranjbar <br/> <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Gamer", "Tech lover" ]'><span className="wrap">{text}</span></span></h1>
                   <p>as you can see above, my name is AliAsghar Ranjbar,
-                     I live in Yazd, <b><i>Iran</i></b> ❤️.
+                     I live in Yazd, <b><i>Iran </i></b> ❤️ &#127470;&#127479;.
                      I'm a Computer Engineering Student at
                       <a href="https://yazd.ac.ir/" className="uni-link"> Yazd university</a>, 
                       with a focus on software engineering.
