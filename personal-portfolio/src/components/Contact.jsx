@@ -120,7 +120,7 @@ export const Contact = () => {
                         }} />
                     </Col>
                     <Col size={12} sm={6} className="px-1">
-                      <input id="tel" dir="auto" type="tel" pattern="09(1[0-9]|3[1-9]|2[1-9])-?[0-9]{3}-?[0-9]{4}" title="Enter valid IR phone number" value={formDetails.phone} placeholder="Phone Number" onChange={(e) => onFormUpdate('phone', e.target.value)} 
+                      <input id="tel" dir="auto" type="tel" pattern="09(1[0-9]|3[1-9]|2[1-9])-?[0-9]{3}-?[0-9]{4}" title="Please Enter valid IR phone number" value={formDetails.phone} placeholder="Phone Number" onChange={(e) => onFormUpdate('phone', e.target.value)} 
                         onBlur={(e) => {
                         const thiso = document.getElementById("tel")
                         thiso.className = ""
