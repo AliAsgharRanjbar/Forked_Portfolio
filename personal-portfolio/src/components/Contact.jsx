@@ -27,7 +27,7 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("Sending...");
-    const response = await fetch("https://alibot.ir/api/mail", {
+    const response = await fetch("http://localhost:5000/mail", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
@@ -117,7 +117,7 @@ export const Contact = () => {
                       }} required onInvalid={(e) => {
                         const thiso = document.getElementById("email")
                         thiso.className = "animate__animated animate__headShake"
-                        }}  pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" />
+                        }} />
                     </Col>
                     <Col size={12} sm={6} className="px-1">
                       <input id="tel" dir="auto" type="tel" pattern="09(1[0-9]|3[1-9]|2[1-9])-?[0-9]{3}-?[0-9]{4}" title="Enter valid IR phone number" value={formDetails.phone} placeholder="Phone Number" onChange={(e) => onFormUpdate('phone', e.target.value)} 
