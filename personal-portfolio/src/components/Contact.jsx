@@ -27,7 +27,7 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("Sending...");
-    const response = await fetch("https://reqres.in/api/user/2", {
+    const response = await fetch("https://alibot.ir/api/mail", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
@@ -43,14 +43,14 @@ export const Contact = () => {
       const data = await response.json()
       console.log("Data: ", data)
     }
-    if (status === undefined) {
-      Swal.fire(
-        'Try again',
-        "Sorry, couldn't proceed your request.",
-        'error'
-        )
-    }
-    if (status) {
+    // if (status === undefined) {
+    //   Swal.fire(
+    //     'Try again',
+    //     "Sorry, couldn't proceed your request.",
+    //     'error'
+    //     )
+    // }
+    // if (status) {
       const Toast = Swal.mixin({
         toast: true,
         position: 'bottom-end',
@@ -69,7 +69,7 @@ export const Contact = () => {
       })
 
 
-  }
+  // }
 
   };
 
@@ -117,10 +117,10 @@ export const Contact = () => {
                       }} required onInvalid={(e) => {
                         const thiso = document.getElementById("email")
                         thiso.className = "animate__animated animate__headShake"
-                        }} />
+                        }}  pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" />
                     </Col>
                     <Col size={12} sm={6} className="px-1">
-                      <input id="tel" dir="auto" type="tel" value={formDetails.phone} placeholder="Phone No." onChange={(e) => onFormUpdate('phone', e.target.value)} 
+                      <input id="tel" dir="auto" type="tel" pattern="09(1[0-9]|3[1-9]|2[1-9])-?[0-9]{3}-?[0-9]{4}" title="Enter valid IR phone number" value={formDetails.phone} placeholder="Phone Number" onChange={(e) => onFormUpdate('phone', e.target.value)} 
                         onBlur={(e) => {
                         const thiso = document.getElementById("tel")
                         thiso.className = ""
@@ -130,7 +130,7 @@ export const Contact = () => {
                         }} />
                     </Col>
                     <Col size={12} className="px-1">
-                      <textarea id="message" dir="auto" rows="6" value={formDetails.message} placeholder="Message" onChange={(e) => onFormUpdate('message', e.target.value)} 
+                      <textarea style={{ resize: "none" }} id="message" dir="auto" rows="6" value={formDetails.message} placeholder="Message" onChange={(e) => onFormUpdate('message', e.target.value)} 
                         onBlur={(e) => {
                         const thiso = document.getElementById("message")
                         thiso.className = ""
