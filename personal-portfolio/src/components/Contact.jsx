@@ -130,7 +130,7 @@ export const Contact = () => {
                         }} />
                     </Col>
                     <Col size={12} className="px-1">
-                      <textarea style={{ resize: "none" }} id="message" dir="auto" rows="6" value={formDetails.message} placeholder="Message" onChange={(e) => onFormUpdate('message', e.target.value)} 
+                      <textarea style={{ resize: "none" }} id="message" dir="auto" rows="6" value={formDetails.message} placeholder="Message: you can use <pre> tag " onChange={(e) => onFormUpdate('message', e.target.value)} 
                         onBlur={(e) => {
                         const thiso = document.getElementById("message")
                         thiso.className = ""
