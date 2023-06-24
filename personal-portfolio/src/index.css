@@ -34,7 +34,7 @@ code {
 
 /******* Handle Scroll Bar *******/
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 1rem; /* 1rem is good too */
 }
 
 /* Track */
@@ -60,5 +60,28 @@ code {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #f8f8f8;
+    /* background: #f8f8f8; */
+    /* background-color: rgb(41, 0, 70); */
+    background: linear-gradient(90.21deg, #aa367c -5.91%, #4A2FBD 111.58%);
+}
+
+
+/******** Handle TextArea ********/
+textarea::-webkit-scrollbar {
+  width: 0.4em;
+}
+
+/******** Handle Cursor *********/
+
+
+*:not(a, img, button, svg, .vvd , button span, .proj-imgbx, .proj-imgbx h4) {
+  cursor: url('./assets/img/cursor-main.cur'), auto;
+}
+
+a, img, button, svg, .vvd, button span, .proj-imgbx, .proj-imgbx h4 {
+  cursor: url('./assets/img/cursor-select.cur'), auto;
+}
+
+img[alt="Contact Us"] {
+  cursor: url('./assets/img/cursor-main.cur'), auto;
 }

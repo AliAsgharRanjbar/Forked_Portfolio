@@ -24,14 +24,14 @@ export const Footer = () => {
               <a href="https://www.linkedin.com/in/aliasgharranjbar/"><img src={navIcon1} alt="Icon" /></a>
               <a href="https://t.me/RanjbarAliAsghar"><img src={telegram} alt="Icon" /></a>
               <a href="https://github.com/AliAsgharRanjbar"><img src={github} alt="Icon" /></a>
-              <a href="mailto:me@alibot.ir?body=THIS EMAIL WAS SENT FROM the visitor of alibot.ir"><img src={email} alt="Icon" title="email" /></a>
+              <a href="mailto:me@alibot.ir?body=THIS EMAIL WAS SENT FROM THE VISITOR OF ALIBOT.IR"><img src={email} alt="Icon" title="email" /></a>
               <a href="tel:+989162603646"><img src={phone} alt="Icon" title="phone" /></a>
 
 
 
             </div>
             <p>Copyleft <span class="copy-left"> ©</span> 2023. All Rights Ignored.</p>
-            <span className="gitLogo"><a href="https://github.com/AliAsgharRanjbar/Portfolio"><img src={github} alt="Icon" style={{ width: "50px"}} title="This portfolio is not mine *-*  I forked it."/></a></span>
+            <span className="gitLogo"><a href="https://github.com/AliAsgharRanjbar/portfolio-v2"><img src={github} alt="Icon" style={{ width: "50px"}} title="This portfolio is not mine *-*  I forked it."/></a></span>
             {/* <FontAwesomeIcon icon="fa-brands fa-github" spin size="2xs" /> */}
 
           </Col>

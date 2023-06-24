@@ -27,10 +27,10 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("Sending...");
-    const response = await fetch("http://localhost:5000/mail", {
+    const response = await fetch("https://alibot.ir/api/contact", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json;charset=utf-8",
+        "Content-Type": "application/json;charsest=utf-8",
       },
       body: JSON.stringify(formDetails),
     });
@@ -42,15 +42,6 @@ export const Contact = () => {
     if (response.ok) {
       const data = await response.json()
       console.log("Data: ", data)
-    }
-    // if (status === undefined) {
-    //   Swal.fire(
-    //     'Try again',
-    //     "Sorry, couldn't proceed your request.",
-    //     'error'
-    //     )
-    // }
-    // if (status) {
       const Toast = Swal.mixin({
         toast: true,
         position: 'bottom-end',
@@ -67,6 +58,22 @@ export const Contact = () => {
         icon: 'success',
         title: 'Message sent successfully!',
       })
+    }
+    
+      //  Swal.fire(
+      //   'Try again',
+      //   "Sorry, couldn't proceed your request.",
+      //   'error'
+      //   )
+
+    // if (status === undefined) {
+    //   Swal.fire(
+    //     'Try again',
+    //     "Sorry, couldn't proceed your request.",
+    //     'error'
+    //     )
+    // }
+    // if (status) {
 
 
   // }
@@ -130,7 +137,7 @@ export const Contact = () => {
                         }} />
                     </Col>
                     <Col size={12} className="px-1">
-                      <textarea style={{ resize: "none" }} id="message" dir="auto" rows="6" value={formDetails.message} placeholder="Message: you can use <pre>" onChange={(e) => onFormUpdate('message', e.target.value)} 
+                      <textarea style={{ resize: "none" }} id="message" dir="auto" rows="6" value={formDetails.message} placeholder="Message:" onChange={(e) => onFormUpdate('message', e.target.value)} 
                         onBlur={(e) => {
                         const thiso = document.getElementById("message")
                         thiso.className = ""
