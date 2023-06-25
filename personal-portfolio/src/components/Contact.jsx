@@ -127,7 +127,7 @@ export const Contact = () => {
                         }} />
                     </Col>
                     <Col size={12} sm={6} className="px-1">
-                      <input id="tel" dir="auto" type="tel" title="Please Enter valid IR phone number" value={formDetails.phone} placeholder="Phone Number" onChange={(e) => onFormUpdate('phone', e.target.value)} 
+                      <input id="tel" dir="auto" type="tel" value={formDetails.phone} placeholder="Phone Number" onChange={(e) => onFormUpdate('phone', e.target.value)} 
                         onBlur={(e) => {
                         const thiso = document.getElementById("tel")
                         thiso.className = ""
