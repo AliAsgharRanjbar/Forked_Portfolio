@@ -34,7 +34,7 @@ code {
 
 /******* Handle Scroll Bar *******/
 ::-webkit-scrollbar {
-  width: 1rem; /* 1rem is good too */
+  width: 1rem; /* 0.5rem is good too */
 }
 
 /* Track */
@@ -63,7 +63,13 @@ code {
     /* background: #f8f8f8; */
     /* background-color: rgb(41, 0, 70); */
     background: linear-gradient(90.21deg, #aa367c -5.91%, #4A2FBD 111.58%);
+    /* background: linear-gradient(
+      90deg,
+      rgba(109, 227, 219, 1) 0%,
+      rgba(132, 115, 177, 1) 100%,
+      rgba(3, 9, 112, 1) 100%); */
 }
+
 
 
 /******** Handle TextArea ********/
@@ -82,6 +88,6 @@ a, img, button, svg, .vvd, button span, .proj-imgbx, .proj-imgbx h4 {
   cursor: url('./assets/img/cursor-select.cur'), auto;
 }
 
-img[alt="Contact Us"] {
+img[alt="Contact Us"], img[alt="Header Img"] {
   cursor: url('./assets/img/cursor-main.cur'), auto;
 }

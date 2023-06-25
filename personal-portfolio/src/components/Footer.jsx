@@ -28,7 +28,6 @@ export const Footer = () => {
               <a href="tel:+989162603646"><img src={phone} alt="Icon" title="phone" /></a>
 
 
-
             </div>
             <p>Copyleft <span class="copy-left"> ©</span> 2023. All Rights Ignored.</p>
             <span className="gitLogo"><a href="https://github.com/AliAsgharRanjbar/portfolio-v2"><img src={github} alt="Icon" style={{ width: "50px"}} title="This portfolio is not mine *-*  I forked it."/></a></span>

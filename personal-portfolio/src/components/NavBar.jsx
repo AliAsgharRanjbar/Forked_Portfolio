@@ -12,6 +12,7 @@ import { HashLink } from 'react-router-hash-link';
 import {
   BrowserRouter as Router
 } from "react-router-dom";
+import HamburgerMenu from "./HamburgerMenu";
 
 export const NavBar = () => {
 
@@ -35,23 +36,52 @@ export const NavBar = () => {
   const onUpdateActiveLink = (value) => {
     setActiveLink(value);
   }
-
+  const sections = document.querySelectorAll("section");
+  const navLi = document.querySelectorAll("nav ul li");
+  window.onscroll = () => {
+    var current = "";
+  
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      if (pageYOffset >= sectionTop - 80) {
+        current = section.getAttribute("id"); }
+    });
+  
+    navLi.forEach((li) => {
+      li.classList.remove("active");
+      if (li.classList.contains(current)) {
+        li.classList.add("active");
+      }
+    });
+  };
   return (
     <Router>
-      <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
+      <Navbar id="navbar" expand="md" className={scrolled  ? "scrolled" : ""} onToggle={() => {
+        let bg = document.getElementById("navbar").style.backgroundColor
+        bg === "" ? document.getElementById("navbar").style = `background: transparent;  backdrop-filter: blur(10px);` : document.getElementById("navbar").style = ""
+      }}>
         <Container>
           <Navbar.Brand href="/">
-            <img src={logo} alt="Logo" />
+            <img src={logo} alt="Logo"/>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
-            <span className="navbar-toggler-icon"></span>
+              <span className="" ></span>
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
-              <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
-              <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
-              <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
-            </Nav>
+            {/* <Nav className="ms-auto">
+              <Nav.Link href="#home" className="home nav-link" onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
+              <Nav.Link href="#skills" className="skills nav-link" onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
+              <Nav.Link href="#projects" className="projects nav-link" onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
+            </Nav> */}
+                <nav className="ms-auto">
+        <div className="container">
+            <ul>
+                <li className="home active navbar-link"><a href="#home">Home</a></li>
+                <li className="skills navbar-link"><a href="#skills">Skills</a></li>
+                <li className="projects navbar-link"><a href="#projects">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
             <span className="navbar-text">
               <div className="social-icon">
               <a href="https://www.linkedin.com/in/aliasgharranjbar/"><img src={navIcon1} alt="Icon" /></a>

@@ -8,7 +8,7 @@ import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { useState, useEffect } from 'react';
 import { Loader, Center } from '@mantine/core';
-
+import ProgressBar from './components/ProgressBar';
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
   const spinner = document.getElementById("spinner")
   if (spinner){
     setTimeout(() => {
-      spinner.style.display = "none";
+      spinner.style.display = "none";            // FOR OLD PACKMAN
       setLoading(false)
     })
   }
@@ -24,21 +24,42 @@ function App() {
   //   setTimeout(() => {
   //     setLoading(false)
   //     const spinner = document.getElementById("spinner")
-  //   }, 6000)
+  //   }, 3000)
   // }, [])
 
+  // display: "block", margin:"auto", marginTop: "20rem", width: "13%"
   return (
+        //   loading
+        //   ? 
+        //   <div style={{display: "block", margin: "auto", marginTop: "20em", width: "11%"}}>
+        //   <PacmanLoader
+        //   color='#eb7734'
+        //   >
 
-          !loading && (<div className="App">
-          <NavBar />
-          <Banner />
-          <Skills />
-          <Projects />
-          <Contact />
-          <Footer />
-        </div>
-          )
-
+        //   </PacmanLoader>
+        //   </div> 
+        //   : 
+        //   (<div className="App">
+        //   <NavBar />
+        //   <Banner />
+        //   <Skills />
+        //   <Projects />
+        //   <Contact />
+        //   <Footer />
+        // </div>
+        //   )
+        !loading && (
+        
+        <div className="App">
+        <ProgressBar />
+        <NavBar />
+        <Banner />
+        <Skills />
+        <Projects />
+        <Contact />
+        <Footer />
+      </div>
+        )
 
 
   );

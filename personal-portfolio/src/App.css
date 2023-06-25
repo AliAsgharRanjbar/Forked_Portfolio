@@ -157,26 +157,44 @@ nav.navbar {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 9999;
+  z-index: 50;
   transition:  0.32s ease-in-out;
 }
 nav.navbar.scrolled {
   padding: 0px 0;
-  background-color: #121212;
+  /* background-color: #121212; */
+  background: #121212bb;
+  backdrop-filter: blur(10px);
+  /* background: transparent; */
 }
+
 nav.navbar a.navbar-brand {
     width: 9%;
 }
-nav.navbar .navbar-nav .nav-link.navbar-link {
+/* nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
   color: #fff !important;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.8px;           // FOR PREVIOUS NAVBAR
   padding: 0 25px;
   font-size: 18px;
   opacity: 0.75;
+} */
+.navbar-link {
+  font-weight: 400;
+  color: #fff !important;
+  letter-spacing: 0.8px;
+  /* padding: 0 25px;
+  font-size: 18px; */
+  opacity: 0.75;
 }
-nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
-nav.navbar .navbar-nav a.nav-link.navbar-link.active {
+
+/* nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
+nav.navbar .navbar-nav a.nav-link.navbar-link.active {      // FOR PREVIOUS NAVBAR
+    opacity: 1;
+} */
+
+.navbar-link:hover,
+.navbar-link.active {
     opacity: 1;
 }
 span.navbar-text {
@@ -204,7 +222,13 @@ span.navbar-text {
     width: 42px;
     height: 42px;
     position: absolute;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
+    background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
+    /* background: linear-gradient(
+      90deg,
+      rgba(109, 227, 219, 1) 0%,
+      rgba(132, 115, 177, 1) 100%,
+      rgba(3, 9, 112, 1) 100%); */
     border-radius: 50%;
     transform: scale(0);
 	transition: 0.3s ease-in-out;
@@ -218,7 +242,8 @@ span.navbar-text {
 	transition: 0.3s ease-in-out;
 }
 .social-icon a:hover img {
-	filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
+	/* filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%); */
+  color: white
 }
 .navbar-text button {
   font-weight: 700;
@@ -732,3 +757,41 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   -ms-filter: "FlipH"; 
   font-size: larger;
 }
+
+
+
+  nav .container {
+  /* width: 90%;
+  max-width: 1000px; */
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px;
+  }
+  nav .container ul li {
+  display: inline-block;
+  border-radius:5px;
+  }
+  nav .container ul li a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 2rem;
+  /* margin: 0 2rem; */
+  /* margin-right: 10rem; */
+  color: whitesmoke;
+  }
+
+  nav {
+      margin-right: 10rem;
+  }
+
+
+
+  nav .container ul li.active {
+  /* background-color: #3b49df; */
+  background: linear-gradient(90.21deg, #aa367c -5.91%, #4A2FBD 111.58%);
+  border-radius:30px;
+  transition: 0.3s;
+  }
+  nav .container ul li.active a {
+  color: #ffffff;
+  }
