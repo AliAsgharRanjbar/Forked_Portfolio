@@ -9,6 +9,7 @@ import { Footer } from "./components/Footer";
 import { useState, useEffect } from 'react';
 import { Loader, Center } from '@mantine/core';
 import ProgressBar from './components/ProgressBar';
+import ToTop from './components/ToTop';
 
 function App() {
 
@@ -51,6 +52,7 @@ function App() {
         !loading && (
         
         <div className="App">
+        <ToTop />
         <ProgressBar />
         <NavBar />
         <Banner />

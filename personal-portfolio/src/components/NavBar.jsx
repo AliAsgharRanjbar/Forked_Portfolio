@@ -12,7 +12,23 @@ import { HashLink } from 'react-router-hash-link';
 import {
   BrowserRouter as Router
 } from "react-router-dom";
-import HamburgerMenu from "./HamburgerMenu";
+import { useDisclosure } from '@mantine/hooks';
+import { Burger } from '@mantine/core';
+// import { Spin as Hamburger } from 'hamburger-react'
+import { Divide as Hamburger } from 'hamburger-react'
+// function Demo() {
+//   const [opened, { toggle }] = useDisclosure(false);
+//   const label = opened ? 'Close navigation' : 'Open navigation';
+//   return <Burger opened={opened} onClick={toggle} color="white" />;
+// }
+function Demo() {
+  // const [opened, { toggle }] = useDisclosure(false);
+  const [opened, setOpened] = useState(false)
+  const label = opened ? 'Close navigation' : 'Open navigation';
+  return <Hamburger toggled={opened} toggle={setOpened} color="white" duration={0.5} size={25} />;
+}
+
+
 
 export const NavBar = () => {
 
@@ -65,7 +81,11 @@ export const NavBar = () => {
             <img src={logo} alt="Logo"/>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
-          <span className="navbar-toggler-icon"></span>
+          {/* <span className="navbar-toggler-icon"></span> */}
+          {/* <HamburgerMenu /> */}
+          <span>
+          <Demo />
+          </span>
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
             {/* <Nav className="ms-auto">
