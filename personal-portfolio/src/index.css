@@ -12,18 +12,18 @@ code {
     monospace;
 }
 
-
-::-moz-selection:not(img) { /* Code for Firefox */
+/* Code for Firefox */
+::-moz-selection:not(img) { 
 
   background: indigo;
 }
 
 ::selection:not(img) {
-
   background: indigo;
 }
 
-::-moz-selection:not(code) { /* Code for Firefox */
+/* Code for Firefox */
+::-moz-selection:not(code) { 
   color: white;
 
 }
@@ -38,39 +38,24 @@ code {
 }
 
 /* Track */
-
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 
-/* Handle */
-
+/* Handle thumb */
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background: #a8b3cf;
 }
 
 /* Handle on hover */
-
 ::-webkit-scrollbar-track:hover {
   background: transparent;
-  /* background: rgb(188,235,175);
-  background: linear-gradient(90deg, rgba(188,235,175,1) 0%, rgba(136,41,170,1) 0%, rgba(2,0,36,1) 100%); */
-
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    /* background: #f8f8f8; */
-    /* background-color: rgb(41, 0, 70); */
     background: linear-gradient(90.21deg, #aa367c -5.91%, #4A2FBD 111.58%);
-    /* background: linear-gradient(
-      90deg,
-      rgba(109, 227, 219, 1) 0%,
-      rgba(132, 115, 177, 1) 100%,
-      rgba(3, 9, 112, 1) 100%); */
 }
-
-
 
 /******** Handle TextArea ********/
 textarea::-webkit-scrollbar {
@@ -78,8 +63,6 @@ textarea::-webkit-scrollbar {
 }
 
 /******** Handle Cursor *********/
-
-
 *:not(a, img, button, svg, .vvd , button span, .proj-imgbx, .proj-imgbx h4) {
   cursor: url('./assets/img/cursor-main.cur'), auto;
 }
