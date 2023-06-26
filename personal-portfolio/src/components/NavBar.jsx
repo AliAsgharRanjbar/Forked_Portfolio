@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Container } from "react-bootstrap";
 import logo from '../assets/img/logo.svg';
-import navIcon1 from '../assets/img/nav-icon1.svg';
-import navIcon2 from '../assets/img/nav-icon2.svg';
-import navIcon3 from '../assets/img/nav-icon3.svg';
+import linkedin from '../assets/img/linkedin.svg';
 import github from "../assets/img/github.svg";
 import telegram from "../assets/img/telegram.svg";
 import email from "../assets/img/email.svg";
@@ -12,27 +10,12 @@ import { HashLink } from 'react-router-hash-link';
 import {
   BrowserRouter as Router
 } from "react-router-dom";
-import { useDisclosure } from '@mantine/hooks';
-import { Burger } from '@mantine/core';
-// import { Spin as Hamburger } from 'hamburger-react'
-import { Divide as Hamburger } from 'hamburger-react'
-// function Demo() {
-//   const [opened, { toggle }] = useDisclosure(false);
-//   const label = opened ? 'Close navigation' : 'Open navigation';
-//   return <Burger opened={opened} onClick={toggle} color="white" />;
-// }
-function Demo() {
-  // const [opened, { toggle }] = useDisclosure(false);
-  const [opened, setOpened] = useState(false)
-  const label = opened ? 'Close navigation' : 'Open navigation';
-  return <Hamburger toggled={opened} toggle={setOpened} color="white" duration={0.5} size={25} />;
-}
+import { HamburgerMenu } from "./HamburgerMenu";
 
 
 
 export const NavBar = () => {
 
-  const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -49,9 +32,7 @@ export const NavBar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, [])
 
-  const onUpdateActiveLink = (value) => {
-    setActiveLink(value);
-  }
+  // Tracking the scroll and highlighting the navbar item accordingly
   const sections = document.querySelectorAll("section");
   const navLi = document.querySelectorAll("nav ul li");
   window.onscroll = () => {
@@ -72,43 +53,37 @@ export const NavBar = () => {
   };
   return (
     <Router>
-      <Navbar id="navbar" expand="md" className={scrolled  ? "scrolled" : ""} onToggle={() => {
+      <Navbar id="navbar" expand="md" className={scrolled  ? "scrolled" : ""} onToggle={() => {       // Handle visibility of Navbar on expanded state
         let bg = document.getElementById("navbar").style.backgroundColor
-        bg === "" ? document.getElementById("navbar").style = `background: transparent;  backdrop-filter: blur(10px);` : document.getElementById("navbar").style = ""
+        bg === "" ? document.getElementById("navbar").style = `background: transparent;  backdrop-filter: blur(10px);`
+        : document.getElementById("navbar").style = ""
       }}>
         <Container>
           <Navbar.Brand href="/">
             <img src={logo} alt="Logo"/>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
-          {/* <span className="navbar-toggler-icon"></span> */}
-          {/* <HamburgerMenu /> */}
           <span>
-          <Demo />
+          <HamburgerMenu />
           </span>
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
-            {/* <Nav className="ms-auto">
-              <Nav.Link href="#home" className="home nav-link" onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
-              <Nav.Link href="#skills" className="skills nav-link" onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
-              <Nav.Link href="#projects" className="projects nav-link" onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
-            </Nav> */}
                 <nav className="ms-auto">
-        <div className="container">
-            <ul>
-                <li className="home active navbar-link"><a href="#home">Home</a></li>
-                <li className="skills navbar-link"><a href="#skills">Skills</a></li>
-                <li className="projects navbar-link"><a href="#projects">Projects</a></li>
-            </ul>
-        </div>
-    </nav>
+                    <div className="container">
+                      <ul>
+                          <li className="home active navbar-link"><a href="#home">Home</a></li>
+                          <li className="skills navbar-link"><a href="#skills">Skills</a></li>
+                          <li className="projects navbar-link"><a href="#projects">Projects</a></li>
+                      </ul>
+                    </div>
+                </nav>
             <span className="navbar-text">
               <div className="social-icon">
-              <a href="https://www.linkedin.com/in/aliasgharranjbar/"><img src={navIcon1} alt="Icon" /></a>
-              <a href="https://t.me/RanjbarAliAsghar"><img src={telegram} alt="Icon" /></a>
-              <a href="https://github.com/AliAsgharRanjbar"><img src={github} alt="Icon" /></a>
-              <a href="mailto:me@alibot.ir?body=THIS EMAIL WAS SENT FROM THE VISITOR OF ALIBOT.IR"><img src={email} alt="Icon" title="email" /></a>
-              <a href="tel:+989162603646"><img src={phone} alt="Icon" title="phone" /></a>
+              <a href="https://www.linkedin.com/in/aliasgharranjbar/"><img src={linkedin} alt="LinkedIn icon" /></a>
+              <a href="https://t.me/RanjbarAliAsghar"><img src={telegram} alt="Telegram icon" /></a>
+              <a href="https://github.com/AliAsgharRanjbar"><img src={github} alt="GitHub icon" /></a>
+              <a href="mailto:me@alibot.ir?body=THIS EMAIL WAS SENT FROM THE VISITOR OF ALIBOT.IR"><img src={email} alt="Email icon" title="email" /></a>
+              <a href="tel:+989162603646"><img src={phone} alt="Phone icon" title="phone" /></a>
               </div>
               <HashLink to='#connect'>
                 <button className="vvd"><span>Let’s Connect</span></button>

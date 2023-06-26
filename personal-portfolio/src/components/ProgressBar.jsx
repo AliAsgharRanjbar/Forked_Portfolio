@@ -1,11 +1,11 @@
 import { React, useState, useEffect } from "react";
 import styled from "styled-components";
 
-// Bar Styled Component
 
+// Bar Styled Component
 const Bar = styled.div`
   position: fixed;
-  z-index: 100;
+  z-index: 1002;
   height: 0.5rem;
   border-radius: 0px 2px 0px 0px;
   background: linear-gradient(
@@ -13,17 +13,12 @@ const Bar = styled.div`
     rgba(109, 227, 219, 1) 0%,
     rgba(132, 115, 177, 1) 100%,
     rgba(3, 9, 112, 1) 100%);
-//     background: green;
-//     transition: 1s;
-//   background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
-
-
 `;
 
-function ProgressBar() {
+export function ProgressBar() {
   //Width State
   const [width, setWidth] = useState(0);
-  const [back, setBack] = useState("")
+//   const [back, setBack] = useState("");
   // scroll function
   const scrollHeight = () => {
     var el = document.documentElement,
@@ -36,7 +31,9 @@ function ProgressBar() {
   //useEffect to control the component lifecycle
     useEffect(() => {
     window.addEventListener("scroll", scrollHeight);
-    // let back;
+
+    // Code for Rainbow ProgressBar
+
     // if (width > 0 && width < 10) {
     //     setBack("")
     // }
@@ -67,7 +64,4 @@ function ProgressBar() {
     return () => window.removeEventListener("scroll", scrollHeight);
     });
   return <Bar style={{ width: width + "%"}}></Bar>;
-  
 }
-
-export default ProgressBar

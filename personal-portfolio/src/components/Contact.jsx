@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import Swal from 'sweetalert2';
-import { Loader, Center } from '@mantine/core';
+
 
 export const Contact = () => {
   const formInitialDetails = {
@@ -16,7 +16,6 @@ export const Contact = () => {
   }
   const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState('Send');
-  const [status, setStatus] = useState();
 
   const onFormUpdate = (category, value) => {
       setFormDetails({
@@ -35,10 +34,8 @@ export const Contact = () => {
       body: JSON.stringify(formDetails),
     });
     setButtonText("Send");
-    // const result = await response.json();
     setFormDetails(formInitialDetails);
 
-    setStatus(response.ok)
     if (response.ok) {
       const data = await response.json()
       console.log("Data: ", data)
@@ -59,24 +56,6 @@ export const Contact = () => {
         title: 'Message sent successfully!',
       })
     }
-    
-      //  Swal.fire(
-      //   'Try again',
-      //   "Sorry, couldn't proceed your request.",
-      //   'error'
-      //   )
-
-    // if (status === undefined) {
-    //   Swal.fire(
-    //     'Try again',
-    //     "Sorry, couldn't proceed your request.",
-    //     'error'
-    //     )
-    // }
-    // if (status) {
-
-
-  // }
 
   };
 
@@ -99,7 +78,7 @@ export const Contact = () => {
                 <form onSubmit={handleSubmit}>
                   <Row>
                     <Col size={12} sm={6} className="px-1">
-                      <input id="fname" dir="auto" type="text" value={formDetails.firstName} placeholder="First Name" onChange={(e) => {onFormUpdate('firstName', e.target.value)}}
+                      <input id="fname" dir="auto" type="text" value={formDetails.firstName} placeholder="First Name: " onChange={(e) => {onFormUpdate('firstName', e.target.value)}}
                        onBlur={(e) => {
                         const thiso = document.getElementById("fname")
                         thiso.className = ""
@@ -109,7 +88,7 @@ export const Contact = () => {
                         }} />
                     </Col>
                     <Col size={12} sm={6} className="px-1">
-                      <input id="lname" dir="auto" type="text" value={formDetails.lastName} placeholder="Last Name" onChange={(e) => onFormUpdate('lastName', e.target.value)}                       onBlur={(e) => {
+                      <input id="lname" dir="auto" type="text" value={formDetails.lastName} placeholder="Last Name: " onChange={(e) => onFormUpdate('lastName', e.target.value)}                       onBlur={(e) => {
                         const thiso = document.getElementById("lname")
                         thiso.className = ""
                       }} required onInvalid={(e) => {
@@ -118,7 +97,7 @@ export const Contact = () => {
                         }} />
                     </Col>
                     <Col size={12} sm={6} className="px-1">
-                      <input id="email" dir="auto" type="email" value={formDetails.email} placeholder="Email Address" onChange={(e) => onFormUpdate('email', e.target.value)}                        onBlur={(e) => {
+                      <input id="email" dir="auto" type="email" value={formDetails.email} placeholder="Email Address: " onChange={(e) => onFormUpdate('email', e.target.value)}                        onBlur={(e) => {
                         const thiso = document.getElementById("email")
                         thiso.className = ""
                       }} required onInvalid={(e) => {
@@ -127,7 +106,7 @@ export const Contact = () => {
                         }} />
                     </Col>
                     <Col size={12} sm={6} className="px-1">
-                      <input id="tel" dir="auto" type="tel" value={formDetails.phone} placeholder="Phone Number" onChange={(e) => onFormUpdate('phone', e.target.value)} 
+                      <input id="tel" dir="auto" type="tel" value={formDetails.phone} placeholder="Phone Number: " onChange={(e) => onFormUpdate('phone', e.target.value)} 
                         onBlur={(e) => {
                         const thiso = document.getElementById("tel")
                         thiso.className = ""

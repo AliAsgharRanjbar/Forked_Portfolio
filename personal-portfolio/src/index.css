@@ -34,7 +34,7 @@ code {
 
 /******* Handle Scroll Bar *******/
 ::-webkit-scrollbar {
-  width: 1rem; /* 0.5rem is good too */
+  width: 0.75rem; /* 0.5rem is good too */
 }
 
 /* Track */
