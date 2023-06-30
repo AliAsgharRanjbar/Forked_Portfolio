@@ -40,7 +40,7 @@ export const NavBar = () => {
   
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
-      if (pageYOffset >= sectionTop - 80) {
+      if (pageYOffset >= sectionTop - 180) {
         current = section.getAttribute("id"); }
     });
   
