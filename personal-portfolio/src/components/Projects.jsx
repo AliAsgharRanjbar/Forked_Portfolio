@@ -50,7 +50,7 @@ export const Projects = () => {
   ];
 
   return (
-    <section className="project" id="projects" data-aos="fade-down" data-aos-anchor-placement="center-bottom">
+    <section className="project" id="projects" data-aos="fade-down">
       <Container>
         <Row>
           <Col size={12}>
