@@ -53,7 +53,7 @@ export const NavBar = () => {
   };
   return (
     <Router>
-      <Navbar id="navbar" expand="md" className={scrolled  ? "scrolled" : ""} onToggle={() => {       // Handle visibility of Navbar on expanded state
+      <Navbar id="navbar" expand="lg" className={scrolled  ? "scrolled" : ""} onToggle={() => {       // Handle visibility of Navbar on expanded state
         let bg = document.getElementById("navbar").style.backgroundColor
         bg === "" ? document.getElementById("navbar").style = `background: transparent;  backdrop-filter: blur(10px);`
         : document.getElementById("navbar").style = ""

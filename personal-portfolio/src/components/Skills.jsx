@@ -6,6 +6,9 @@ import 'react-multi-carousel/lib/styles.css';
 // import arrow1 from "../assets/img/arrow1.svg";
 // import arrow2 from "../assets/img/arrow2.svg";
 import colorSharp from "../assets/img/color-sharp.png"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 export const Skills = () => {
   const responsive = {
@@ -27,9 +30,13 @@ export const Skills = () => {
       items: 1
     }
   };
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+    AOS.refresh();
 
+  }, [])
   return (
-    <section className="skill" id="skills">
+    <section className="skill" id="skills" data-aos="fade-down" data-aos-anchor-placement="center-bottom">
         <div className="container">
             <div className="row">
                 <div className="col-12">

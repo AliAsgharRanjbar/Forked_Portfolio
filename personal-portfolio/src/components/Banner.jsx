@@ -52,9 +52,7 @@ export const Banner = () => {
       <Container>
         <Row className="aligh-items-center">
           <Col xs={12} md={6} xl={7}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+              <div>
                 <span className="tagline">Welcome, Happy to see you here :&#41; </span>
                 <h1>Hi! <br/> I'm AliAsghar Ranjbar <br/> <span className="txt-rotate" data-rotate='[ "web developer", "gamer", "programmer", "philomath!", "coder" ]'><span className="wrap">{text}</span></span></h1>
                   <p>as you can see above, my name is AliAsghar Ranjbar,
@@ -65,10 +63,8 @@ export const Banner = () => {
                        I always try to be a good listener and learn from everthing.
                        I'm currently working on developing my programming skills.
                        </p>
-                  
                   <button  onClick={() => console.log("connect")}><a href="#connect" className="secondConnect">Let’s Connect</a><a href="#connect" className="secondConnect"><ArrowRightCircle size={25} /></a></button>
-              </div>}
-            </TrackVisibility>
+              </div>
           </Col>
           <Col xs={12} md={6} xl={5}>
             <TrackVisibility>

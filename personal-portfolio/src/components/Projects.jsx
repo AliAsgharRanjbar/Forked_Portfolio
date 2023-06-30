@@ -6,8 +6,15 @@ import projImg3 from "../assets/img/project-img3.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 export const Projects = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+    AOS.refresh();
+  }, [])
 
   const projects = [
     {
@@ -43,7 +50,7 @@ export const Projects = () => {
   ];
 
   return (
-    <section className="project" id="projects">
+    <section className="project" id="projects" data-aos="fade-down" data-aos-anchor-placement="center-bottom">
       <Container>
         <Row>
           <Col size={12}>
